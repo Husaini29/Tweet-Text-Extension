@@ -1,0 +1,19 @@
+{
+    "manifest_version":3,
+    "name":"TweetTextExtension",
+    "description":"Fetches original tweet text for Twitter replies",
+    "version":"1.0",
+    "content_scripts": [
+        {
+          "matches": ["https://twitter.com/*"],
+          "js": ["content.js"],
+          "css": ["style.css"]
+        }
+    ],
+    "action":{
+      "default_icon":{
+        "16": "logo.png",
+        "48": "logo.png" 
+      }
+    }
+}

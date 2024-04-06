@@ -1,0 +1,11 @@
+.tweetTextBtn{
+    border: none;
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
