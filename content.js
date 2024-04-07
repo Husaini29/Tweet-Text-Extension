@@ -1,18 +1,16 @@
 (function() {
   
+    // Using Mutation Observer to observe the DOM changes
   const observer = new MutationObserver(function(mutationsList, observer) {
       for(let mutation of mutationsList) {
           if (mutation.type === 'childList') {
               const replyField = document.querySelector('.public-DraftStyleDefault-block');
 
               if (replyField) {
-                  const div = document.createElement("div");
-                  div.className = "tweetBtnContainer"
                   const button = document.createElement('button');
                   button.textContent = 'Get Tweet';
                   button.className = "tweetTextBtn";
                   button.addEventListener('click', getOriginalTweetText);
-                  div.appendChild(button);
 
                   replyField.parentNode.insertBefore(button, replyField.nextSibling);
                   // Disconnect observer after finding reply field
@@ -31,7 +29,7 @@
       const placeHolder = document.querySelector(".public-DraftEditorPlaceholder-inner");
 
 
-      // Find the element containing original tweet text
+      // Finding the element containing original tweet text
       const tweetContainer = document.querySelector('[data-testid="tweetText"]');
       
       if (tweetContainer) {
@@ -44,7 +42,8 @@
 
               placeHolder.parentElement.removeChild(placeHolder);
               
-              // Manipulate reply field as needed
+              // Manipulate reply field 
+              
               const brTag = replyField.querySelector('span > br[data-text="true"]');
 
               if(brTag){
